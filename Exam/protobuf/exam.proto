@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package mock;
+option go_package = "https://github.com/frejabv/DisysExam/;protobuf";
+
+service Exam {
+  //rpc Name (NameRequest) returns (NameReply) {}
+}
