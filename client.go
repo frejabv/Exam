@@ -1,7 +1,7 @@
 package main
 
 import (
-	"DisysExam/protobuf"
+	"Exam/protobuf"
 	"context"
 	"log"
 	"os"
@@ -12,7 +12,7 @@ import (
 
 func main() {
 	//Set output to log file
-	LOG_FILE := "log.txt" //maybe?
+	LOG_FILE := "log.txt" 
 	logFile, err := os.OpenFile(LOG_FILE, os.O_APPEND|os.O_RDWR|os.O_CREATE, 0644)
 	if err != nil {
 		log.Panic(err)

@@ -1,4 +1,4 @@
-module DisysExam
+module Exam
 
 go 1.17
 

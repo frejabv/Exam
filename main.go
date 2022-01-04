@@ -1,9 +1,10 @@
 package main
 
 import (
-	"DisysExam/protobuf"
+	"Exam/protobuf"
 	"bufio"
 	"context"
+	"fmt"
 	"log"
 	"net"
 	"os"
@@ -17,7 +18,18 @@ type server struct {
 }
 
 func main() {
-	log.Print("Welcome Server. You need to write 0, 1 or 2:") // maybe change
+	//Set output to log file
+	LOG_FILE := "log.txt" 
+	logFile, err := os.OpenFile(LOG_FILE, os.O_APPEND|os.O_RDWR|os.O_CREATE, 0644)
+	if err != nil {
+		log.Panic(err)
+	}
+	defer logFile.Close()
+
+	log.SetOutput(logFile)
+
+	//Welcome message to register correct ports
+	fmt.Print("Welcome Server. You need to write 0, 1 or 2:") // maybe change
 	reader := bufio.NewReader(os.Stdin)
 	text, _ := reader.ReadString('\n')
 	port := strings.Replace(text, "\n", "", 1)
@@ -38,6 +50,6 @@ func main() {
 }
 
 func (s *server) Name(ctx context.Context, in *protobuf.NameRequest) (*protobuf.NameReply, error) {
-	log.Println("Server received increment")
+	log.Println("Server received -Name- request")
 	return &protobuf.NameReply{}, nil
 }
