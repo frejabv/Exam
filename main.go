@@ -1,7 +1,7 @@
 package main
 
 import (
-	"DisysExam/Exam/protobuf"
+	"DisysExam/protobuf"
 	"bufio"
 	"context"
 	"log"
@@ -17,18 +17,19 @@ type server struct {
 }
 
 func main() {
-	log.Print("Welcome Server. You need to write 0, 1 or 2:")
+	log.Print("Welcome Server. You need to write 0, 1 or 2:") // maybe change
 	reader := bufio.NewReader(os.Stdin)
 	text, _ := reader.ReadString('\n')
 	port := strings.Replace(text, "\n", "", 1)
 
-	lis, err := net.Listen("tcp", ":808"+port)
+	//Start server
+	lis, err := net.Listen("tcp", ":808"+port) // here to potentially
 
 	if err != nil { //error before listening
 		log.Fatalf("failed to listen: %v", err)
 	}
 	s := grpc.NewServer() //we create a new server
-	protobuf.RegisterMockServer(s, &server{})
+	protobuf.RegisterExamServer(s, &server{})
 
 	log.Printf("server listening at %v", lis.Addr())
 	if err := s.Serve(lis); err != nil { //error while listening
@@ -36,8 +37,7 @@ func main() {
 	}
 }
 
-func (s *server) Increment(ctx context.Context, in *protobuf.IncrementRequest) (*protobuf.IncrementReply, error) {
+func (s *server) Name(ctx context.Context, in *protobuf.NameRequest) (*protobuf.NameReply, error) {
 	log.Println("Server received increment")
-	value += 1
-	return &protobuf.IncrementReply{NewValue: value}, nil
+	return &protobuf.NameReply{}, nil
 }
