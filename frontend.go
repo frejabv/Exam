@@ -95,12 +95,22 @@ func (s *server) Put(ctx context.Context, in *protobuf.PutRequest) (*protobuf.Pu
 	message1, err1 := client1.Put(context.Background(), &protobuf.PutRequest{Key: in.Key, Value: in.Value, LamportTimestamp: lamportTime})
 	message2, err2 := client2.Put(context.Background(), &protobuf.PutRequest{Key: in.Key, Value: in.Value, LamportTimestamp: lamportTime})
 
-	if err != nil || err1 != nil || err2 != nil {
+	if err != nil && err1 != nil && err2 != nil {
 		log.Fatal("Put to servers did not succeed")
 	}
 
 	//check if a majority has returned true on succes
-	var messages = []*protobuf.PutReply{message, message1, message2}
+	var messages []*protobuf.PutReply
+	if err == nil {
+		messages = append(messages, message)
+	}
+	if err1 == nil {
+		messages = append(messages, message1)
+	}
+	if err2 == nil {
+		messages = append(messages, message2)
+	}
+	
 
 	var succesCount = 0
 	for i := 0; i < len(messages); i++ {
