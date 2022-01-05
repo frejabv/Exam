@@ -18,7 +18,9 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ExamClient interface {
-	Name(ctx context.Context, in *NameRequest, opts ...grpc.CallOption) (*NameReply, error)
+	Put(ctx context.Context, in *PutRequest, opts ...grpc.CallOption) (*PutReply, error)
+	Get(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*GetReply, error)
+	Ping(ctx context.Context, in *PingRequest, opts ...grpc.CallOption) (*PingReply, error)
 }
 
 type examClient struct {
@@ -29,9 +31,27 @@ func NewExamClient(cc grpc.ClientConnInterface) ExamClient {
 	return &examClient{cc}
 }
 
-func (c *examClient) Name(ctx context.Context, in *NameRequest, opts ...grpc.CallOption) (*NameReply, error) {
-	out := new(NameReply)
-	err := c.cc.Invoke(ctx, "/mock.Exam/Name", in, out, opts...)
+func (c *examClient) Put(ctx context.Context, in *PutRequest, opts ...grpc.CallOption) (*PutReply, error) {
+	out := new(PutReply)
+	err := c.cc.Invoke(ctx, "/exam.Exam/Put", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *examClient) Get(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*GetReply, error) {
+	out := new(GetReply)
+	err := c.cc.Invoke(ctx, "/exam.Exam/Get", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *examClient) Ping(ctx context.Context, in *PingRequest, opts ...grpc.CallOption) (*PingReply, error) {
+	out := new(PingReply)
+	err := c.cc.Invoke(ctx, "/exam.Exam/Ping", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -42,7 +62,9 @@ func (c *examClient) Name(ctx context.Context, in *NameRequest, opts ...grpc.Cal
 // All implementations must embed UnimplementedExamServer
 // for forward compatibility
 type ExamServer interface {
-	Name(context.Context, *NameRequest) (*NameReply, error)
+	Put(context.Context, *PutRequest) (*PutReply, error)
+	Get(context.Context, *GetRequest) (*GetReply, error)
+	Ping(context.Context, *PingRequest) (*PingReply, error)
 	mustEmbedUnimplementedExamServer()
 }
 
@@ -50,8 +72,14 @@ type ExamServer interface {
 type UnimplementedExamServer struct {
 }
 
-func (UnimplementedExamServer) Name(context.Context, *NameRequest) (*NameReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Name not implemented")
+func (UnimplementedExamServer) Put(context.Context, *PutRequest) (*PutReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Put not implemented")
+}
+func (UnimplementedExamServer) Get(context.Context, *GetRequest) (*GetReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
+func (UnimplementedExamServer) Ping(context.Context, *PingRequest) (*PingReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Ping not implemented")
 }
 func (UnimplementedExamServer) mustEmbedUnimplementedExamServer() {}
 
@@ -66,20 +94,56 @@ func RegisterExamServer(s grpc.ServiceRegistrar, srv ExamServer) {
 	s.RegisterService(&Exam_ServiceDesc, srv)
 }
 
-func _Exam_Name_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(NameRequest)
+func _Exam_Put_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PutRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ExamServer).Name(ctx, in)
+		return srv.(ExamServer).Put(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/mock.Exam/Name",
+		FullMethod: "/exam.Exam/Put",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ExamServer).Name(ctx, req.(*NameRequest))
+		return srv.(ExamServer).Put(ctx, req.(*PutRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Exam_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ExamServer).Get(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/exam.Exam/Get",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ExamServer).Get(ctx, req.(*GetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Exam_Ping_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ExamServer).Ping(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/exam.Exam/Ping",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ExamServer).Ping(ctx, req.(*PingRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -88,12 +152,20 @@ func _Exam_Name_Handler(srv interface{}, ctx context.Context, dec func(interface
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Exam_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "mock.Exam",
+	ServiceName: "exam.Exam",
 	HandlerType: (*ExamServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Name",
-			Handler:    _Exam_Name_Handler,
+			MethodName: "Put",
+			Handler:    _Exam_Put_Handler,
+		},
+		{
+			MethodName: "Get",
+			Handler:    _Exam_Get_Handler,
+		},
+		{
+			MethodName: "Ping",
+			Handler:    _Exam_Ping_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

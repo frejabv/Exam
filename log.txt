@@ -1,0 +1,181 @@
+2022/01/05 10:39:58 server listening at [::]:8080
+2022/01/05 10:40:00 server listening at [::]:8081
+2022/01/05 10:40:02 server listening at [::]:8082
+2022/01/05 10:46:40 Server received Get request for key: 0
+2022/01/05 10:46:40 Server received Get request for key: 0
+2022/01/05 10:46:40 Server received Get request for key: 0
+2022/01/05 10:46:40 Value for key: 0 is: 1000
+2022/01/05 10:46:56 Server received Put request for key: 0 with value: 0
+2022/01/05 10:46:56 Server received Put request for key: 0 with value: 0
+2022/01/05 10:46:56 Server received Put request for key: 0 with value: 0
+2022/01/05 10:46:56 Succes: true
+2022/01/05 10:48:29 Server received Put request for key: 4 with value: 5
+2022/01/05 10:48:29 Server received Put request for key: 4 with value: 5
+2022/01/05 10:48:29 Server received Put request for key: 4 with value: 5
+2022/01/05 10:48:29 Succes: true
+2022/01/05 10:57:59 server listening at [::]:8080
+2022/01/05 10:58:00 server listening at [::]:8081
+2022/01/05 10:58:01 server listening at [::]:8082
+2022/01/05 10:58:26 Server received Put request for key: 4 with value: 5
+2022/01/05 10:58:26 Server received Put request for key: 4 with value: 5
+2022/01/05 10:58:26 Server received Put request for key: 4 with value: 5
+2022/01/05 10:58:26 Put to servers did not succeed
+2022/01/05 11:03:33 server listening at [::]:8080
+2022/01/05 11:03:35 server listening at [::]:8081
+2022/01/05 11:03:36 server listening at [::]:8082
+2022/01/05 11:03:46 Server received Put request for key: 4 with value: 5
+2022/01/05 11:03:46 Server received Put request for key: 4 with value: 5
+2022/01/05 11:03:46 Server received Put request for key: 4 with value: 5
+2022/01/05 11:03:47 Succes: true
+2022/01/05 11:03:49 Server received Get request for key: 0
+2022/01/05 11:03:49 Server received Get request for key: 0
+2022/01/05 11:03:49 Server received Get request for key: 0
+2022/01/05 11:03:49 Value for key: 4 is: 0
+2022/01/05 11:04:50 server listening at [::]:8080
+2022/01/05 11:04:52 server listening at [::]:8081
+2022/01/05 11:04:54 server listening at [::]:8082
+2022/01/05 11:05:06 Server received Put request for key: 4 with value: 5
+2022/01/05 11:05:06 Server received Put request for key: 4 with value: 5
+2022/01/05 11:05:06 Server received Put request for key: 4 with value: 5
+2022/01/05 11:05:06 Succes: true
+2022/01/05 11:05:09 Server received Get request for key: 4
+2022/01/05 11:05:09 Server received Get request for key: 4
+2022/01/05 11:05:09 Server received Get request for key: 4
+2022/01/05 11:05:09 Value for key: 4 is: 5
+2022/01/05 11:53:10 server listening at [::]:8080
+2022/01/05 11:53:11 server listening at [::]:8081
+2022/01/05 11:53:12 server listening at [::]:8082
+2022/01/05 11:53:43 Server 0 received Put request for key: 4 with value: 5
+2022/01/05 11:53:43 Server 1 received Put request for key: 4 with value: 5
+2022/01/05 11:53:43 Server 2 received Put request for key: 4 with value: 5
+2022/01/05 11:53:43 Succes: true
+2022/01/05 11:53:46 Server 0 received Get request for key:%!(EXTRA int32=4)
+2022/01/05 11:53:46 Server 1 received Get request for key:%!(EXTRA int32=4)
+2022/01/05 11:53:46 Server 2 received Get request for key:%!(EXTRA int32=4)
+2022/01/05 11:53:46 Value for key: 4 is: 5
+2022/01/05 11:53:49 Server 0 received Get request for key:%!(EXTRA int32=6)
+2022/01/05 11:53:49 Server 1 received Get request for key:%!(EXTRA int32=6)
+2022/01/05 11:53:49 Server 2 received Get request for key:%!(EXTRA int32=6)
+2022/01/05 11:53:49 Value for key: 6 is: 0
+2022/01/05 11:54:49 Server 0 received Get request for key:%!(EXTRA int32=4)
+2022/01/05 11:54:49 Server 2 received Get request for key:%!(EXTRA int32=4)
+2022/01/05 11:54:49 Value for key: 4 is: 5
+2022/01/05 11:55:01 Server 0 received Get request for key:%!(EXTRA int32=10)
+2022/01/05 11:55:01 Server 2 received Get request for key:%!(EXTRA int32=10)
+2022/01/05 11:55:01 Value for key: 10 is: 0
+2022/01/05 11:55:20 server listening at [::]:8081
+2022/01/05 11:55:33 Server 0 received Get request for key:%!(EXTRA int32=4)
+2022/01/05 11:55:33 Server 1 received Get request for key: 4
+2022/01/05 11:55:33 Server 2 received Get request for key:%!(EXTRA int32=4)
+2022/01/05 11:55:33 Server 1 received Put request for key: 4 with value: 5
+2022/01/05 11:55:33 Value for key: 4 is: 5
+2022/01/05 13:04:51 server listening at [::]:8080
+2022/01/05 13:04:53 server listening at [::]:8081
+2022/01/05 13:04:54 server listening at [::]:8082
+2022/01/05 13:05:05 Server 0 received Put request for key: 7 with value: 6
+2022/01/05 13:05:05 Server 1 received Put request for key: 7 with value: 6
+2022/01/05 13:05:05 Server 2 received Put request for key: 7 with value: 6
+2022/01/05 13:05:05 Succes: true
+2022/01/05 13:05:08 Server 0 received Get request for key: 7
+2022/01/05 13:05:08 Server 1 received Get request for key: 7
+2022/01/05 13:05:08 Server 2 received Get request for key: 7
+2022/01/05 13:05:08 Value for key: 7 is: 6
+2022/01/05 13:05:10 Server 0 received Get request for key: 10
+2022/01/05 13:05:10 Server 1 received Get request for key: 10
+2022/01/05 13:05:10 Server 2 received Get request for key: 10
+2022/01/05 13:05:10 Value for key: 10 is: 0
+2022/01/05 13:05:13 Server 0 received Get request for key: 101
+2022/01/05 13:05:13 Server 1 received Get request for key: 101
+2022/01/05 13:05:13 Server 2 received Get request for key: 101
+2022/01/05 13:05:13 Could not get
+2022/01/05 13:06:58 server listening at [::]:8080
+2022/01/05 13:06:59 server listening at [::]:8081
+2022/01/05 13:07:01 server listening at [::]:8082
+2022/01/05 13:07:19 Server 0 received Put request for key: 4 with value: 5
+2022/01/05 13:07:19 Server 1 received Put request for key: 4 with value: 5
+2022/01/05 13:07:19 Server 2 received Put request for key: 4 with value: 5
+2022/01/05 13:07:19 Succes: true
+2022/01/05 13:13:36 server listening at [::]:8080
+2022/01/05 13:13:41 server listening at [::]:8081
+2022/01/05 13:13:42 server listening at [::]:8082
+2022/01/05 13:14:08 Server 0 received Get request for key: 4
+2022/01/05 13:14:08 Server 1 received Get request for key: 4
+2022/01/05 13:14:08 Server 2 received Get request for key: 4
+2022/01/05 13:14:08 Value for key: 4 is: 0
+2022/01/05 13:14:12 Server 0 received Put request for key: 6 with value: 7
+2022/01/05 13:14:12 Server 1 received Put request for key: 6 with value: 7
+2022/01/05 13:14:12 Server 2 received Put request for key: 6 with value: 7
+2022/01/05 13:14:12 Succes: true
+2022/01/05 13:14:22 Server 0 received Put request for key: 6 with value: 8
+2022/01/05 13:14:22 Server 1 received Put request for key: 6 with value: 8
+2022/01/05 13:14:22 Server 2 received Put request for key: 6 with value: 8
+2022/01/05 13:14:22 Succes: true
+2022/01/05 13:15:43 Server 0 received Put request for key: 9 with value: 10
+2022/01/05 13:15:43 Server 1 received Put request for key: 9 with value: 10
+2022/01/05 13:15:43 Server 2 received Put request for key: 9 with value: 10
+2022/01/05 13:15:43 Succes: true
+2022/01/05 13:15:48 Server 0 received Put request for key: 2 with value: 200
+2022/01/05 13:15:48 Server 1 received Put request for key: 2 with value: 200
+2022/01/05 13:15:48 Server 2 received Put request for key: 2 with value: 200
+2022/01/05 13:15:48 Succes: true
+2022/01/05 13:16:05 Server 0 received Get request for key: 6
+2022/01/05 13:16:05 Server 1 received Get request for key: 6
+2022/01/05 13:16:05 Server 2 received Get request for key: 6
+2022/01/05 13:16:05 Value for key: 6 is: 8
+2022/01/05 13:16:27 Could not get
+2022/01/05 13:19:52 Server 0 received Get request for key: 5
+2022/01/05 13:19:52 Server 1 received Get request for key: 5
+2022/01/05 13:19:52 Server 2 received Get request for key: 5
+2022/01/05 13:19:52 Value for key: 5 is: 0
+2022/01/05 13:19:55 Server 0 received Put request for key: 77 with value: 4
+2022/01/05 13:19:55 Server 1 received Put request for key: 77 with value: 4
+2022/01/05 13:19:55 Server 2 received Put request for key: 77 with value: 4
+2022/01/05 13:19:55 Succes: true
+2022/01/05 13:20:08 Could not get
+2022/01/05 13:22:02 Server 0 received Get request for key: 99
+2022/01/05 13:22:02 Server 1 received Get request for key: 99
+2022/01/05 13:22:02 Server 2 received Get request for key: 99
+2022/01/05 13:22:02 Value for key: 99 is: 0
+2022/01/05 13:22:06 Server 0 received Put request for key: 6 with value: 2
+2022/01/05 13:22:06 Server 1 received Put request for key: 6 with value: 2
+2022/01/05 13:22:06 Server 2 received Put request for key: 6 with value: 2
+2022/01/05 13:22:06 Succes: true
+2022/01/05 13:25:27 Server 0 received Put request for key: 6 with value: 2
+2022/01/05 13:25:27 Server 1 received Put request for key: 6 with value: 2
+2022/01/05 13:25:27 Server 2 received Put request for key: 6 with value: 2
+2022/01/05 13:25:27 Succes: true
+2022/01/05 13:25:33 Server 0 received Get request for key: 7
+2022/01/05 13:25:33 Server 1 received Get request for key: 7
+2022/01/05 13:25:33 Server 2 received Get request for key: 7
+2022/01/05 13:25:33 Value for key: 7 is: 0
+2022/01/05 13:27:54 Server 0 received Get request for key: 6
+2022/01/05 13:27:54 Server 1 received Get request for key: 6
+2022/01/05 13:27:54 Server 2 received Get request for key: 6
+2022/01/05 13:27:54 Value for key: 6 is: 2
+2022/01/05 13:27:58 Server 0 received Put request for key: 8 with value: 10
+2022/01/05 13:27:58 Server 1 received Put request for key: 8 with value: 10
+2022/01/05 13:27:58 Server 2 received Put request for key: 8 with value: 10
+2022/01/05 13:27:58 Succes: true
+2022/01/05 13:29:15 Server 0 received Put request for key: 7 with value: 10
+2022/01/05 13:29:15 Server 1 received Put request for key: 7 with value: 10
+2022/01/05 13:29:15 Server 2 received Put request for key: 7 with value: 10
+2022/01/05 13:29:15 Succes: true
+2022/01/05 13:33:10 server listening at [::]:8080
+2022/01/05 13:33:11 server listening at [::]:8081
+2022/01/05 13:33:12 server listening at [::]:8082
+2022/01/05 13:33:29 Server 0 received Get request for key: 5
+2022/01/05 13:33:29 Server 1 received Get request for key: 5
+2022/01/05 13:33:29 Server 2 received Get request for key: 5
+2022/01/05 13:33:29 Value for key: 5 is: 0
+2022/01/05 13:33:37 Server 0 received Put request for key: 7 with value: 10
+2022/01/05 13:33:37 Server 1 received Put request for key: 7 with value: 10
+2022/01/05 13:33:37 Server 2 received Put request for key: 7 with value: 10
+2022/01/05 13:33:37 Succes: true
+2022/01/05 13:33:46 Server 0 received Get request for key: 7
+2022/01/05 13:33:46 Server 1 received Get request for key: 7
+2022/01/05 13:33:46 Server 2 received Get request for key: 7
+2022/01/05 13:33:46 Value for key: 7 is: 10
+2022/01/05 13:33:56 Server 0 received Get request for key: 8
+2022/01/05 13:33:56 Server 1 received Get request for key: 8
+2022/01/05 13:33:56 Server 2 received Get request for key: 8
+2022/01/05 13:33:56 Value for key: 8 is: 0

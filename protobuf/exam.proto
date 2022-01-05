@@ -1,14 +1,36 @@
 syntax = "proto3";
 
-package mock;
-option go_package = "https://github.com/frejabv/DisysExam/;protobuf";
+package exam;
+option go_package = "https://github.com/frejabv/Exam/;protobuf";
 
 service Exam {
-  rpc Name (NameRequest) returns (NameReply) {}
+  rpc Put (PutRequest) returns (PutReply) {}
+  rpc Get (GetRequest) returns (GetReply) {}
+  rpc Ping (PingRequest) returns (PingReply) {}
 }
 
-message NameRequest {}
+message PutRequest {
+  int32 key = 1;
+  int32 value = 2;
+  int32 lamportTimestamp = 3;
+}
 
-message NameReply {
-	//int32 newValue = 1;
+message PutReply {
+	bool succes = 1;
+}
+
+message GetRequest {
+  int32 key = 1;
+  int32 lamportTimestamp = 2;
+}
+
+message GetReply {
+	int32 value = 1;
+  int32 lamportTimestamp = 2;
+}
+
+message PingRequest {}
+
+message PingReply {
+	bool alive = 1;
 }
