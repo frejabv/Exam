@@ -179,3 +179,10 @@
 2022/01/05 13:33:56 Server 1 received Get request for key: 8
 2022/01/05 13:33:56 Server 2 received Get request for key: 8
 2022/01/05 13:33:56 Value for key: 8 is: 0
+2022/01/05 13:36:14 Server 0 received Get request for key: 5
+2022/01/05 13:36:14 Server 1 received Get request for key: 5
+2022/01/05 13:36:14 Server 2 received Get request for key: 5
+2022/01/05 13:36:14 Value for key: 5 is: 0
+2022/01/05 13:36:21 Server 0 received Get request for key: 8
+2022/01/05 13:36:21 Server 2 received Get request for key: 8
+2022/01/05 13:36:21 Value for key: 8 is: 0

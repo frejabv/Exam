@@ -95,7 +95,6 @@ func (s *server) Put(ctx context.Context, in *protobuf.PutRequest) (*protobuf.Pu
 	message1, err1 := client1.Put(context.Background(), &protobuf.PutRequest{Key: in.Key, Value: in.Value, LamportTimestamp: lamportTime})
 	message2, err2 := client2.Put(context.Background(), &protobuf.PutRequest{Key: in.Key, Value: in.Value, LamportTimestamp: lamportTime})
 
-	//TODO: maybe check if 2 have died, so we don't end it if only 1 fail
 	if err != nil || err1 != nil || err2 != nil {
 		log.Fatal("Put to servers did not succeed")
 	}
